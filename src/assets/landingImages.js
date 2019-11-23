@@ -1,4 +1,4 @@
-const base = 'https://source.unsplash.com';
+const base = '//source.unsplash.com';
 const size = '800x400';
 const buildSrc = id => `${base}/${id}/${size}`;
 

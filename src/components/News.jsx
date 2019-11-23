@@ -16,7 +16,7 @@ export default class News extends React.Component {
   }
 
   getNewsFromPage = async number => {
-    const res = await axios.get(`http://api.4slovo.ru/news/page/${number}`)
+    const res = await axios.get(`//api.4slovo.ru/news/page/${number}`)
     return res.data
   }
 
