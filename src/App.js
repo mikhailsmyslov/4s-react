@@ -9,7 +9,8 @@ import LogIn from './components/Login';
 import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './components/AuthContext';
-import history from './history';
+import history from './lib/history';
+import routes from './routes'
 
 export default () => {
   return (
@@ -18,10 +19,10 @@ export default () => {
         <NavBar />
         <Container as="main" className="mt-5">
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/news" component={News} />
-            <Route path="/login" component={LogIn} />
-            <ProtectedRoute path="/profile" component={Profile} />
+            <Route exact path={routes.home} component={Home} />
+            <Route path={routes.news} component={News} />
+            <Route path={routes.login} component={LogIn} />
+            <ProtectedRoute path={routes.profile} component={Profile} />
           </Switch>
         </Container>
         <Footer />

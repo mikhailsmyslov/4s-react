@@ -4,6 +4,14 @@
   flex-direction: column;
 }
 
+.brand-logo {
+  height: 5vh;
+}
+
+.helper-image {
+  height: 20vmin;
+}
+
 .icon-link {
   color: inherit;
 }

@@ -30,8 +30,9 @@ export default class News extends React.Component {
     const { news, totalPages, activePage } = this.state
     return (
       <div>
-        {news.map(({ date, seo_title, seo_description }) => (
+        {news.map(({ date, seo_title, seo_description }, index) => (
           <NewsCard
+            key={index}
             date={date}
             title={seo_title}
             description={seo_description}

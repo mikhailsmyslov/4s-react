@@ -24,13 +24,11 @@ export default props => {
           </Col>
         </Row>
         <h6>{jobTitle}</h6>
-        <Card.Text>
           <ul>
             {duties.map((duty, ind) => (
               <li key={ind}>{duty}</li>
             ))}
           </ul>
-        </Card.Text>
       </Card.Body>
     </Card>
   )

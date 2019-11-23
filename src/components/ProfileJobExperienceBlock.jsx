@@ -8,7 +8,7 @@ export default (props) => {
         <h4>Experience</h4>
         <hr />
         {
-            jobs.map(job => <JobExperienceCard {...job} />)
+            jobs.map((job, index) => <JobExperienceCard key={index} {...job} />)
         }
 
         </>

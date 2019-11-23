@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faGithub,
@@ -11,7 +10,7 @@ import {
 export default () => (
   <footer className="py-3 bg-dark mt-auto text-white-50">
     <div className="text-center">
-      <a className="icon-link" href="#">
+      <a className="icon-link" href="https://github.com/mikhailsmyslov/4s-react">
         <FontAwesomeIcon icon={faGithub} size="lg" className="mr-2" />
       </a>
       <a className="icon-link" href="https://react-bootstrap.netlify.com/">

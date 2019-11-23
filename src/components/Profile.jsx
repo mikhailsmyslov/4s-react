@@ -15,7 +15,7 @@ export default () => (
           <Col>
             <h2>
               Profile
-              <small className="text-muted ml-4">{user.name}</small>
+              <small className="text-muted ml-4">{user.nickName}</small>
             </h2>
           </Col>
           <Col className="text-right">

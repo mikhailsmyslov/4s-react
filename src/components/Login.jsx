@@ -1,6 +1,8 @@
 import React from 'react'
 import { Col, Form, Button, Alert } from 'react-bootstrap'
 import { AuthConsumer } from './AuthContext'
+import routes from '../routes'
+import { Redirect } from 'react-router-dom'
 
 export default class News extends React.Component {
   constructor(props) {
@@ -24,13 +26,15 @@ export default class News extends React.Component {
     const successRedirect =
       location && location.state && location.state.from
         ? location.state.from
-        : '/'
+        : routes.home
     return (
-      <div className="d-flex justify-content-center">
-        <Col md={5}>
-          <h3 className="text-center mb-4">Sign In</h3>
-          <AuthConsumer>
-            {({ login, errMsg, closeErrMsg }) => (
+      <AuthConsumer>
+        {({ login, user, errMsg, closeErrMsg }) => (
+          <>
+          {user && <Redirect to={routes.home} />}
+          <div className="d-flex justify-content-center">
+            <Col md={5}>
+              <h3 className="text-center mb-4">Sign In</h3>
               <Form
                 onChange={this.handleChange}
                 onSubmit={this.fakeSubmit(
@@ -74,10 +78,11 @@ export default class News extends React.Component {
                   Sign In
                 </Button>
               </Form>
-            )}
-          </AuthConsumer>
-        </Col>
-      </div>
+            </Col>
+          </div>
+          </>
+        )}
+      </AuthConsumer>
     )
   }
 }

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Cookies } from 'react-cookie'
-import fakeUser from '../fakeUser'
+import fakeUser from '../assets/fakeUser'
 import { Redirect } from 'react-router-dom'
-import history from '../history'
+import history from '../lib/history'
+import routes from '../routes'
 
 const AuthContext = React.createContext()
 
@@ -22,14 +23,14 @@ class AuthProvider extends React.Component {
     }
   }
 
-  login = (userName, password, redirectTo = '/') => () => {
+  login = (userName, password, redirectTo = routes.home) => () => {
     const isValidCredentials =
       userName === validUserName && password === validPassword
     const errMsg = isValidCredentials
       ? ''
       : 'User name or password are not correct'
     if (isValidCredentials) {
-      cookies.set(authCookie, true, { maxAge: 3600, path: '/' })
+      cookies.set(authCookie, true, { maxAge: 3600, path: routes.root })
       this.setState({ user: fakeUser, errMsg })
       history.push(redirectTo)
     } else {
@@ -37,7 +38,7 @@ class AuthProvider extends React.Component {
     }
   }
 
-  logout = (redirectTo = '/') => () => {
+  logout = (redirectTo = routes.home) => () => {
     cookies.remove(authCookie)
     this.setState({ errMsg: '', user: null })
     history.push(redirectTo)
