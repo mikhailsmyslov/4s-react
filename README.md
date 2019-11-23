@@ -1,3 +1,9 @@
+## Test assigment  
+Test assignment for [https://4slovo.ru/](https://4slovo.ru/)  
+
+## Live Demo  
+[https://my-4s-react.herokuapp.com/](https://my-4s-react.herokuapp.com/)  
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
