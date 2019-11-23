@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container } from 'react-bootstrap';
+import { Router, Switch, Route } from "react-router-dom";
+import Home from './components/Home';
+import News from './components/News';
+import Profile from './components/Profile';
+import NavBar from './components/NavBar';
+import LogIn from './components/Login';
+import Footer from './components/Footer';
+import ProtectedRoute from './components/ProtectedRoute';
+import { AuthProvider } from './components/AuthContext';
+import history from './history';
 
-function App() {
+export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <AuthProvider>
+        <NavBar />
+        <Container as="main" className="mt-5">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/news" component={News} />
+            <Route path="/login" component={LogIn} />
+            <ProtectedRoute path="/profile" component={Profile} />
+          </Switch>
+        </Container>
+        <Footer />
+      </AuthProvider>
+    </Router>
   );
-}
-
-export default App;
+};
