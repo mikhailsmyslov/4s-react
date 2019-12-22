@@ -12,7 +12,7 @@ export default props => {
 
   return (
     <Row className="mb-5">
-      <Col md={4}>
+      <Col md={4} >
         <img src={avatar} alt="avatar" className="w-100" />
       </Col>
       <Col md={{ offset: 1 }} ml={2}>

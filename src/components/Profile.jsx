@@ -12,7 +12,7 @@ export default () => (
     {({ user, logout }) => (
       <>
         <Row className="mb-2">
-          <Col>
+          <Col >
             <h2>
               Profile
               <small className="text-muted ml-4">{user.nickName}</small>
